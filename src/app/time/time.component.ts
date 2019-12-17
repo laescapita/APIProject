@@ -34,7 +34,7 @@ export class TimeComponent implements OnInit {
   }
 
   private updateStats() {
-    console.log('I am doing something every second');
+    console.log('Now this is Pod Racing');
 }
 
 }
