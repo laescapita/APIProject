@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherAPIService } from 'src/app/services/weather-api.service';
 //import {enableProdMode} from '@angular/core';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -12,7 +13,7 @@ export class WeatherComponent implements OnInit {
   constructor(private weatherService: WeatherAPIService) { }
 
   ngOnInit() {
-  this.getWeatherData();
+  interval(1000).subscribe(_ => this.getWeatherData());
   }
 
   getWeatherData() {
@@ -24,7 +25,4 @@ export class WeatherComponent implements OnInit {
         console.log('got error', error);
       });
   }
-
-  
-
 }

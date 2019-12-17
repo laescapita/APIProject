@@ -8,6 +8,7 @@ import { Subscription, interval } from 'rxjs';
 })
 export class TimeComponent implements OnInit {
   private updateSubscription: Subscription;
+  days: any;
   hours: any;
   minutes: any;
   seconds: any;
@@ -23,6 +24,7 @@ export class TimeComponent implements OnInit {
   getValues(){
     this.timeService.getValues().subscribe((result) =>{
       console.log('time results', result);
+      this.days = result.days;
       this.hours = result.hours;
       this.minutes = result.minutes;
       this.seconds = result.seconds;
