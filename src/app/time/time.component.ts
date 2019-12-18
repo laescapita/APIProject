@@ -35,6 +35,7 @@ export class TimeComponent implements OnInit {
 
   private updateStats() {
     console.log('This is Test Branch');
+
 }
 
 }
